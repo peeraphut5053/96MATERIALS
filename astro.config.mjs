@@ -10,6 +10,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://96materials.com",
+  base: '/',
   image: {
     domains: ["images.unsplash.com"],
   },

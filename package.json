@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && node process-html.mjs",
-    "deploy": "gh-pages -d dist",
+    "build": "astro check && astro build && node process-html.mjs && touch dist/.nojekyll",
+    "deploy": "yarn build && echo '96materials.com' > dist/CNAME  && gh-pages -d dist",
     "preview": "astro preview",
     "astro": "astro"
   },
