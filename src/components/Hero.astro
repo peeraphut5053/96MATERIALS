@@ -1,0 +1,64 @@
+---
+import Showcase from '../assets/hero.svg'
+
+const { t } = Astro.props;
+---
+<section class="product-hero">
+  <div class="container">
+    <div class="row">
+      <div class="one-half column">
+        <div class="d-cell">
+          <h1 class="h1-title">{t.hero.title}</h1>
+          <div class="content">
+            <p>{t.hero.description}</p>
+            <a href="https://github.com/LaB-CH3/astrobrew" class="button button-primary lg">
+              {t.hero.cta}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="one-half column hero-media">
+        <img src={Showcase.src} class="u-full-width" alt="Hero illustrator" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .product-hero {
+    padding: 70px 0;
+    .row {
+      display: flex;
+      align-items: center;
+    }
+    .one-half {
+      display: table;
+      height: 400px;
+      margin-bottom: 40px;
+      .d-cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    .hero-media {
+      position: relative;
+      img:not(.u-full-width) {
+        width: 80px;
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .product-hero {
+      .row {
+        flex-direction: column;
+        .hero-media {
+          display: none;
+        }
+      }
+    }
+  }
+</style>

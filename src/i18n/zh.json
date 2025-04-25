@@ -1,0 +1,58 @@
+{
+    "meta": {
+      "title": "Astrobrew | 微型 SaaS 登陆页面"
+    },
+    "nav": {
+      "features": "功能特色",
+      "customers": "客户",
+      "premium": "高级版",
+      "new": "最新",
+      "login": "登录",
+      "join": "加入我们"
+    },
+    "hero": {
+      "title": "用最佳语言导师更快学习",
+      "description": "Astrobrew 是一个免费且开源的优雅登陆页面，专为微型 SaaS 产品打造，基于 Astro 和 Skeleton CSS",
+      "cta": "立即免费开始"
+    },
+    "features": {
+      "title": "你会喜欢的功能",
+      "items": [
+        "易于使用",
+        "简洁设计",
+        "基于 Astro 构建",
+        "超快性能",
+        "适配所有设备"
+      ]
+    },
+    "howToUse": {
+      "title": "如何开始使用？",
+      "steps": [
+        {
+          "title": "从 GitHub 下载",
+          "description": "点击“立即免费开始”按钮克隆项目"
+        },
+        {
+          "title": "编辑你的内容",
+          "description": "更新文本、图像和链接以匹配你的品牌"
+        },
+        {
+          "title": "发布你的网站",
+          "description": "通过 GitHub Pages、Vercel 或你喜欢的平台部署"
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "准备好开始了吗？",
+      "description": "Astrobrew 帮助你在几分钟内构建专业的登陆页面",
+      "cta": "立即开始"
+    },
+    "footer": {
+      "text": "由 Astro 社区 ❤️ 倾心打造",
+      "links": {
+        "github": "GitHub",
+        "privacy": "隐私政策",
+        "terms": "使用条款"
+      }
+    }
+  }

@@ -1,0 +1,86 @@
+---
+export interface Props {
+  title: string;
+  lang?: string; // ✅ รับภาษา
+}
+
+import TopHeader from "../components/TopHeader.astro";
+
+const { title, lang = 'en' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Astrobrew is a free and open-source elegant landing page for Micro SaaS products built with Astro & Skeleton CSS"/>
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+  </head>
+  <body>
+    <TopHeader lang={lang} /> <!-- ✅ อยู่แยกชัดเจนจาก Header -->
+    <slot />
+  </body>
+</html>
+
+<style lang="scss" is:global>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  --accent: #CA555D;
+  --tenary: #8574EB;
+  --font-family: "Ubuntu", sans-serif;
+}
+
+body, html {
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
+  margin: 0px;
+}
+
+.block { display: block; }
+.h1-title, .h2-title { font-weight: 500; }
+.h1-title { font-size: 4.2rem; }
+.h2-title { font-size: 3rem; }
+.h3-title { font-size: 2.5rem; }
+
+.text-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.center { text-align: center; }
+
+@mixin btnPrimary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.button {
+  border-radius: 40px;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  &.button-primary {
+    @include btnPrimary;
+    &:hover, &:focus, &:active {
+      @include btnPrimary;
+    }
+  }
+  &.lg {
+    height: 50px;
+    line-height: 48px;
+  }
+}
+
+.flex { display: flex; }
+section.padded { padding: 70px 0; }
+
+@media (max-width: 900px) {
+  .h1-title {
+    font-size: 3.2rem;
+  }
+}
+</style>

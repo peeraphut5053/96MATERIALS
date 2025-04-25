@@ -1,0 +1,51 @@
+---
+const { lang } = Astro.props;
+const supportedLangs = ['en', 'th', 'zh'];
+
+const currentPath = Astro.url.pathname.replace(/^\/(en|th|zh)/, '');
+---
+<div class="top-header">
+  <div class="container lang-switch">
+    {supportedLangs.map((code) => (
+      <a
+        href={`/${code}${currentPath}`}
+        class={lang === code ? 'active' : ''}
+      >
+        {code === 'en' ? 'EN' : code === 'th' ? 'ไทย' : code === 'zh' ? '中文' : ''}
+      </a>
+    ))}
+  </div>
+</div>
+
+<style lang="scss">
+.top-header {
+  width: 100%;
+  background-color: #f3f4f6;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.lang-switch {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  a {
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #e0e0e0;
+    }
+
+    &.active {
+      background: #2563eb;
+      color: white;
+    }
+  }
+}
+</style>

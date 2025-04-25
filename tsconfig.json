@@ -1,18 +1,8 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@content/*": ["src/content/*"],
-      "@data/*": ["src/data_files/*"],
-      "@images/*": ["src/images/*"],
-      "@scripts/*": ["src/assets/scripts/*"],
-      "@styles/*": ["src/assets/styles/*"],
-      "@utils/*": ["src/utils/*"]
-    }
+    "resolveJsonModule": true,    // ✅ เพื่อ import .json ได้แบบ TypeScript
+    "esModuleInterop": true       // ✅ เพื่อ import แบบ default เช่น `import foo from 'bar'`
   },
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "include": ["src"]
 }
