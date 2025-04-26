@@ -15,63 +15,36 @@ import { getTranslation } from '../../i18n';
 const lang = Astro.params.lang ?? 'th';
 const t = getTranslation(lang);
 
-const products = [
-  {
-    name: t.products.categories[0],
-    image: '',
-    description: 'วัสดุก่อสร้างพื้นฐาน เช่น คอนกรีต ปูน และอิฐคุณภาพสูง',
-    price: 150,
-  },
-  {
-    name: t.products.categories[1],
-    image: '',
-    description: 'เหล็กเส้น มอก. และปูนซีเมนต์มาตรฐานอุตสาหกรรม',
-    price: 320,
-  },
-  {
-    name: t.products.categories[2],
-    image: '',
-    description: 'เครื่องมือช่าง เช่น สว่าน เลื่อย ค้อน และอุปกรณ์เสริม',
-    price: 90,
-  },
-  {
-    name: t.products.categories[3],
-    image: '',
-    description: 'สีทาอาคาร กระเบื้อง สุขภัณฑ์ และวัสดุตกแต่งบ้าน',
-    price: 260,
-  }, 
-  {
-    name: t.products.categories[4],
-    image: '',
-    description: 'อุปกรณ์ไฟฟ้า เช่น สายไฟ สวิตช์ และปลั๊กไฟ',
-    price: 120,
-  },
-  {
-    name: t.products.categories[5],
-    image: '',
-    description: 'วัสดุอุปกรณ์สำหรับงานไฟฟ้า เช่น สายไฟ สวิตช์ และปลั๊กไฟ',
-    price: 200,
-  }
-  
-];
+const products = t.productList;
 ---
 
 <Layout title={t.products.title} lang={lang}>
   <section class="product-layout container">
     <aside class="cart-section sticky">
-      <h2>🛒 ตะกร้าของคุณ</h2>
+      <h4>🛒 ตะกร้าของคุณ</h4>
       <ul id="cart-list"></ul>
       <div id="cart-summary"></div>
-      
       <button onclick="clearCart()" class="clear-cart">🗑 ล้างตะกร้า</button>
     </aside>
 
     <main class="product-section">
       <h1 class="h1-title center">{t.products.title}</h1>
+
+      <div class="filter-bar">
+        <label>หมวดสินค้า:</label>
+        <select id="category-filter" onchange="filterProducts()">
+          <option value="all">ทั้งหมด</option>
+          {Array.from(new Set(products.map(p => p.categories))).map((cat) => (
+            <option value={cat}>{cat}</option>
+          ))}
+        </select>
+      </div>
+
       <div class="product-grid">
         {products.map((item) => (
-          <div class="product-card">
+          <div class="product-card" data-category={item.categories}>
             <img src={item.image || hero.src} alt={item.name} />
+            <h6>{item.categories}</h6>
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             <p><strong>฿{item.price}</strong></p>
@@ -83,9 +56,27 @@ const products = [
       </div>
     </main>
   </section>
+  <button id="floating-cart-btn" class="floating-cart" onclick="scrollToCart()">
+    <span class="cart-icon">🛒</span>
+  </button>
 </Layout>
 
 <script is:inline>
+  function filterProducts() {
+    const selected = document.getElementById('category-filter').value;
+    const allProducts = document.querySelectorAll('.product-card');
+
+    allProducts.forEach(card => {
+      const category = card.getAttribute('data-category');
+      card.style.display = (selected === 'all' || category === selected) ? 'block' : 'none';
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    renderCart();
+    filterProducts();
+  });
+
   function addToCart(productName, price) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const index = cart.findIndex(item => item.name === productName);
@@ -170,6 +161,13 @@ const products = [
     summary.innerHTML = `<p><strong>รวมทั้งหมด: ฿${total}</strong></p>`;
   }
 
+  function scrollToCart() {
+    const cartSection = document.querySelector(".cart-section");
+    if (cartSection) {
+      cartSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   window.addEventListener('DOMContentLoaded', renderCart);
 </script>
 
@@ -192,7 +190,7 @@ const products = [
 
 .cart-section.sticky {
   position: sticky;
-  top: 1rem;
+  top: 15rem;
   align-self: flex-start;
 }
 
@@ -315,7 +313,7 @@ const products = [
 
 .product-card h3 {
   margin: 0.5rem 0;
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
   color: #111827;
 }
 
@@ -341,6 +339,32 @@ const products = [
   background: #1e40af;
 }
 
+.floating-cart {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  cursor: pointer;
+  transition: background 0.3s;
+  align-items: center;
+  justify-content: center;
+}
+.floating-cart:hover {
+  background-color: #c2c3c9;
+}
+.cart-icon {
+  font-size: 2rem;       /* ✅ ขยายขนาด */
+  color: #ffffff;        /* ✅ สีขาว */
+  line-height: 1;
+}
+
 @media (max-width: 768px) {
   .product-layout {
     flex-direction: column;
@@ -350,5 +374,10 @@ const products = [
     width: 100%;
     order: 2;
   }
+
+  .floating-cart {
+    display: flex;
+  }
 }
+  
 </style>

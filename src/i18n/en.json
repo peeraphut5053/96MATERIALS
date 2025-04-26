@@ -1,68 +1,158 @@
 {
-    "meta": {
-        "title": "96 MATERIALS | Materials that Build Trust"
+  "meta": {
+    "title": "96 Materials | Construction Materials You Can Trust"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products / Services",
+    "contact": "Contact Us",
+    "reviews": "Reviews"
+  },
+  "home": {
+    "slogan": "Quality materials you can trust",
+    "intro": "96 Materials Co., Ltd. is not just a construction materials company but a partner in building the future, committed to quality, product diversity, and excellence in modern construction.",
+    "cta": "Start Shopping"
+  },
+  "features": {
+    "quality": {
+      "title": "Product Diversity",
+      "description": "One of the outstanding qualities of 96 Materials Co., Ltd. is the diversity and coverage of its products. Understanding the varied needs of the construction industry, the company offers a wide range of materials to meet different project requirements. From basics like concrete and rebar to finishing materials like tiles and paint, 96 Materials ensures customers have everything they need in one place. This one-stop solution simplifies procurement and saves valuable time and resources for contractors."
     },
-    "nav": {
-        "home": "Home",
-        "about": "About Us",
-        "products": "Products / Services",
-        "contact": "Contact Us",
-        "projects": "Projects / Reviews"
+    "service": {
+      "title": "Customer-Centric Service",
+      "description": "In an industry where time is critical, 96 Materials Co., Ltd. stands out through its customer-focused service. The company takes pride in its knowledgeable and responsive customer service team, ready to assist with product inquiries, ordering, and after-sales support. By building strong customer relationships, 96 Materials ensures that customer satisfaction is a top priority. This commitment to service excellence has earned it a loyal customer base and a reputation for reliability."
     },
-    "home": {
-        "slogan": "Materials that Build Trust",
-        "intro": "96 MATERIALS CO., LTD. is committed to providing high-quality construction materials sourced from trusted manufacturers, ensuring strength and sustainability for every project.",
-        "cta": "Get Started"
-    },
-    "about": {
-        "title": "About Us",
-        "content": [
-            "The core of 96 MATERIALS CO., LTD. is an unwavering commitment to quality...",
-            "One of the company’s key strengths is its diverse and comprehensive product range...",
-            "96 MATERIALS emphasizes customer-centric service through a knowledgeable and responsive support team...",
-            "Sustainability is a priority, offering eco-friendly materials and embracing innovation in construction..."
-        ]
-    },
-    "products": {
-        "title": "Products & Services",
-        "categories": [
-            "Heavy Construction Materials",
-            "Steel & Cement",
-            "Tools & Equipment",
-            "Paints & Decorative Materials"
-        ]
-    },
-    "contact": {
-        "title": "Contact Us",
-        "phone": "Phone",
-        "line": "LINE",
-        "facebook": "Facebook",
-        "map": "Store Location"
-    },
-    "reviews": {
-        "title": "Projects / Reviews",
-        "description": "Explore our projects and customer reviews to see the quality and reliability of our materials in action.",
-        "projects": [
-            {
-                "name": "Project A",
-                "description": "A large-scale residential project using our heavy construction materials."
-            },
-            {
-                "name": "Project B",
-                "description": "A commercial building project utilizing our steel and cement products."
-            },
-            {
-                "name": "Project C",
-                "description": "A renovation project featuring our paints and decorative materials."
-            }
-        ]
-    },
-    "productGrid": {
-        "title": "ตะกร้าสินค้า",
-        "empty": "ตะกร้าของคุณว่างเปล่า",
-        "checkout": "ชำระเงิน",
-        "continueShopping": "เลือกซื้อสินค้าเพิ่มเติม",
-        "addProduct": "เพิ่มสินค้า"
+    "reliability": {
+      "title": "Sustainability & Innovation",
+      "description": "In today's environmentally conscious world, sustainability is essential. 96 Materials Co., Ltd. is committed to promoting sustainable construction practices by offering eco-friendly products and solutions. The company continually sources materials that reduce environmental impact without compromising quality. Additionally, 96 Materials stays at the forefront of innovation, exploring new technologies and materials to meet the evolving needs of the construction industry."
     }
-    
+  },
+  "OrderStep": {
+    "title": "How to Order",
+    "description": "Ordering from us is simple and convenient",
+    "step1": {
+      "title": "Choose Products",
+      "description": "Select the products you need from various categories"
+    },
+    "step2": {
+      "title": "Contact Us",
+      "description": "Inquire for more info or request a quote"
+    },
+    "step3": {
+      "title": "Make Payment",
+      "description": "Pay via your preferred method"
+    },
+    "step4": {
+      "title": "Delivery",
+      "description": "We deliver to your door safely and quickly"
+    },
+    "btn": {
+      "title": "Contact Us",
+      "description": "Reach out today to start your order"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "content": [
+      "The core value of 96 Materials Co., Ltd. is an unwavering commitment to quality. The company carefully selects materials from trusted manufacturers to ensure that every product meets strict industry standards. Whether it’s cement, steel, or finishing materials, customers can trust they are receiving high-performance and durable products. This dedication not only strengthens construction projects but also gives peace of mind to builders and users alike."
+    ],
+    "CEOName": "Mr. Somchai Jaidee",
+    "CEOTitle": "Chief Executive Officer"
+  },
+  "products": {
+    "title": "Products & Services",
+    "categories": [
+      "Heavy Construction Materials",
+      "Rebar and Cement",
+      "Tools & Equipment",
+      "Paint & Decorative Materials",
+      "Accessories",
+      "Delivery Services"
+    ]
+  },
+  "productList": [
+    {
+      "categories": "Heavy Construction Materials",
+      "name": "1",
+      "image": "",
+      "description": "Basic construction materials like concrete, cement, and high-quality bricks",
+      "price": 150
+    },
+    {
+      "categories": "Rebar and Cement",
+      "name": "2",
+      "image": "",
+      "description": "Certified rebar and standard industrial cement",
+      "price": 320
+    },
+    {
+      "categories": "Tools & Equipment",
+      "name": "3",
+      "image": "",
+      "description": "Construction tools like drills, saws, hammers, and accessories",
+      "price": 90
+    },
+    {
+      "categories": "Paint & Decorative Materials",
+      "name": "4",
+      "image": "",
+      "description": "Building paint, tiles, sanitary ware, and home decoration items",
+      "price": 260
+    },
+    {
+      "categories": "Accessories",
+      "name": "5",
+      "image": "",
+      "description": "Electrical accessories like wires, switches, and outlets",
+      "price": 120
+    },
+    {
+      "categories": "Accessories",
+      "name": "6",
+      "image": "",
+      "description": "Additional electrical equipment such as cables, switches, and plugs",
+      "price": 200
+    }
+  ],
+  "contact": {
+    "title": "Contact Us",
+    "companyName": "96 Materials Co., Ltd.",
+    "address": "123 Construction Road, Khaeng Khaeng Raeng, Sangsuan District, Bangkok 10000",
+    "hours": "Open: Monday - Saturday, 08:00 - 17:00",
+    "callNow": "Call Us",
+    "chatLine": "Chat via LINE",
+    "visitFacebook": "Visit Facebook"
+  },
+  "reviews": {
+    "title": "Projects / Reviews",
+    "description": "Our proud achievements from customer projects",
+    "projects": [
+      {
+        "name": "Housing Project",
+        "image": "",
+        "description": "High-quality materials certified for standard use were used in this project"
+      },
+      {
+        "name": "Commercial Building",
+        "image": "",
+        "description": "Appropriate material selection made this project strong and visually appealing"
+      },
+      {
+        "name": "Home Renovation",
+        "image": "",
+        "description": "Using quality paint and decor materials gave this home a fresh, new look"
+      }
+    ]
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "productGrid": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "checkout": "Checkout",
+    "continueShopping": "Continue Shopping",
+    "addProduct": "Add Product"
+  }
 }

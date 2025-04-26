@@ -15,7 +15,7 @@ const { t } = Astro.props;
                 </div>
                 <div class="customer-testimony">
                     <h4 class="h3-title">"{t.about.content}"</h4>
-                    <p>Claire Rick, Lead Developer @Slack</p>
+                    <p>{t.about.CEOName} {t.about.CEOTitle}</p>
                 </div>
             </div>
         </div>
@@ -26,6 +26,7 @@ const { t } = Astro.props;
 
 
 .fine-section{
+    scroll-margin-top: 150px;
     background-color: var(--accent);
     .container{
         position: relative;

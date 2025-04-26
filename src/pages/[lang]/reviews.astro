@@ -1,4 +1,6 @@
 ---
+import hero from '../../assets/hero-homebuilding.png';
+
 export async function getStaticPaths() {
   return [
     { params: { lang: 'th' } },
@@ -17,12 +19,18 @@ const t = getTranslation(lang);
 <Layout title={t.reviews.title} lang={lang}>
   <section class="container padded review-section">
     <h1 class="h1-title center">{t.reviews.title}</h1>
+    <p class="center text-subtitle">{t.reviews.description}</p>
 
     <div class="review-grid">
-      {t.reviews.projects.map((item) => (
+      {t.reviews.projects.map((item, index) => (
         <div class="review-card">
-          <p class="quote">“{item.name}”</p>
-          <p class="author">— {item.name}, {item.description}</p>
+          <div class="review-image">
+            <img src={item.image || hero.src} alt={item.name} loading="lazy" />
+          </div>
+          <div class="review-content">
+            <h3 class="review-title">{item.name}</h3>
+            <p class="review-description">{item.description}</p>
+          </div>
         </div>
       ))}
     </div>
@@ -31,33 +39,56 @@ const t = getTranslation(lang);
 
 <style>
 .review-section {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.text-subtitle {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #6b7280;
 }
 
 .review-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .review-card {
-  background-color: #f9fafb;
-  border-left: 5px solid var(--accent, #2563eb);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.review-card .quote {
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.review-content {
+  padding: 1.25rem;
+}
+
+.review-title {
+  margin: 0 0 0.5rem;
   font-size: 1.2rem;
-  font-style: italic;
-  margin-bottom: 1rem;
+  color: #111827;
 }
 
-.review-card .author {
-  color: #555;
-  font-weight: bold;
+.review-description {
+  font-size: 1rem;
+  color: #4b5563;
 }
 </style>

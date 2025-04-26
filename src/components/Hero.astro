@@ -1,35 +1,50 @@
 ---
 import hero from '../assets/hero.png';
+import logo96mat from '../assets/logo-96mat.png';
 
 const { t, lang } = Astro.props;
 ---
 
-<section class="product-hero" id="product-hero">
+<section class="product-hero fine-section padded" id="product-hero">
   <div class="container">
     <div class="row">
       <div class="column-left">
         <div class="hero-content">
+          <!-- <img src={logo96mat.src} alt="96MATERIALS" class="hero-logo" /> -->
           <h1 class="hero-title">{t.home.slogan}</h1>
           <p class="hero-description">{t.home.intro}</p>
           <div class="hero-buttons">
             <a href={`/${lang}/products`} class="button button-primary lg">
               {t.home.cta || "Explore Products"}
             </a>
-            <a href={`/${lang}/products`} class="button button-outline lg">
+            <a href={`/${lang}/#contact`} class="button button-outline lg">
               {t.OrderStep.btn.title}
             </a>
           </div>
         </div>
       </div>
       <div class="column-right">
-        <img src={hero.src} alt="Construction materials illustration" class="hero-image" />
+        <img src={logo96mat.src} alt="Construction materials illustration" class="hero-image" />
       </div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
-.product-hero {
+
+.hero-logo {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.fine-section{
+    scroll-margin-top: 150px;
+    background-color: var(--accent);
+    .container{
+        position: relative;
+    }
+}
+.product-hero {.
+  
   padding: 4rem 0;
   background: #f9fafb;
 

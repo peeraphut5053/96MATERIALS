@@ -1,7 +1,7 @@
 ---
 export interface Props {
   title: string;
-  lang?: string; // ✅ รับภาษา
+  lang?: string;
 }
 
 import TopHeader from "../components/TopHeader.astro";
@@ -20,6 +20,13 @@ const t = getTranslation(lang);
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <!-- ✅ ฟอนต์ 3 ภาษา -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Sarabun&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet" />
+
+    <!-- Skeleton CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
   </head>
   <body>
@@ -32,22 +39,42 @@ const t = getTranslation(lang);
 </html>
 
 <style lang="scss" is:global>
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* ✅ ฟอนต์แยกตามภาษา */
+html[lang="th"] {
+  // --main-font: 'Sarabun', sans-serif;
+  --main-font: 'kanit', sans-serif;
+}
+html[lang="en"] {
+  --main-font: 'Ubuntu', sans-serif;
+}
+html[lang="zh"] {
+  --main-font: 'Noto Sans SC', sans-serif;
+}
+
+
+/* -------------------------------- */
+
+body {
+  font-family: var(--main-font, sans-serif);
+  padding-top: 100px;
+}
 
 :root {
   --accent: #6882e0;
   --tenary: #3512fb;
-  --font-family: "Ubuntu", sans-serif;
 }
+
 .sticky-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 999;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
+
 body, html {
-  font-family: var(--font-family);
   scroll-behavior: smooth;
   margin: 0px;
 }
