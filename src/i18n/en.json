@@ -69,49 +69,54 @@
       "Paint & Decorative Materials",
       "Accessories",
       "Delivery Services"
-    ]
+    ],
+    "total": "Total",
+    "productCategory": "Product Category:",
+    "all": "All",
+    "addProductCart": "Add to Cart",
+    "clearCart": "Clear All"
   },
   "productList": [
     {
       "categories": "Heavy Construction Materials",
-      "name": "1",
+      "name": "Ready-Mixed Concrete",
       "image": "",
-      "description": "Basic construction materials like concrete, cement, and high-quality bricks",
+      "description": "Essential construction materials such as concrete, mortar, and high-quality bricks.",
       "price": 150
     },
     {
-      "categories": "Rebar and Cement",
-      "name": "2",
+      "categories": "Rebar & Cement",
+      "name": "Standard Rebar",
       "image": "",
-      "description": "Certified rebar and standard industrial cement",
+      "description": "Industry-standard rebar and cement certified for strength and durability.",
       "price": 320
     },
     {
-      "categories": "Tools & Equipment",
-      "name": "3",
+      "categories": "Tools",
+      "name": "Electric Drill",
       "image": "",
-      "description": "Construction tools like drills, saws, hammers, and accessories",
+      "description": "Essential tools such as drills, saws, hammers, and accessories for various tasks.",
       "price": 90
     },
     {
-      "categories": "Paint & Decorative Materials",
-      "name": "4",
+      "categories": "Paint & Decoration",
+      "name": "Exterior Wall Paint",
       "image": "",
-      "description": "Building paint, tiles, sanitary ware, and home decoration items",
+      "description": "High-quality paints, tiles, sanitary ware, and home decorative materials.",
       "price": 260
     },
     {
       "categories": "Accessories",
-      "name": "5",
+      "name": "Triple Socket Plug",
       "image": "",
-      "description": "Electrical accessories like wires, switches, and outlets",
+      "description": "Electrical accessories including cables, switches, and socket outlets.",
       "price": 120
     },
     {
       "categories": "Accessories",
-      "name": "6",
+      "name": "Copper Wire",
       "image": "",
-      "description": "Additional electrical equipment such as cables, switches, and plugs",
+      "description": "High-grade copper wire, switches, and essential electrical installation supplies.",
       "price": 200
     }
   ],

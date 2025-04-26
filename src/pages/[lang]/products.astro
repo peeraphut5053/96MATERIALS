@@ -21,19 +21,18 @@ const products = t.productList;
 <Layout title={t.products.title} lang={lang}>
   <section class="product-layout container">
     <aside class="cart-section sticky">
-      <h4>🛒 ตะกร้าของคุณ</h4>
       <ul id="cart-list"></ul>
       <div id="cart-summary"></div>
-      <button onclick="clearCart()" class="clear-cart">🗑 ล้างตะกร้า</button>
+      <button onclick="clearCart()" class="clear-cart">🗑 {t.products.clearCart}</button>
     </aside>
 
     <main class="product-section">
       <h1 class="h1-title center">{t.products.title}</h1>
 
       <div class="filter-bar">
-        <label>หมวดสินค้า:</label>
+        <label>{t.products.productCategory}</label>
         <select id="category-filter" onchange="filterProducts()">
-          <option value="all">ทั้งหมด</option>
+          <option value="all">{t.products.all}</option>
           {Array.from(new Set(products.map(p => p.categories))).map((cat) => (
             <option value={cat}>{cat}</option>
           ))}
@@ -49,7 +48,7 @@ const products = t.productList;
             <p>{item.description}</p>
             <p><strong>฿{item.price}</strong></p>
             <button class="add-to-cart" onclick={`addToCart('${item.name}', ${item.price})`}>
-              🛒 เพิ่มลงตะกร้า
+              🛒 {t.products.addProductCart}
             </button>
           </div>
         ))}

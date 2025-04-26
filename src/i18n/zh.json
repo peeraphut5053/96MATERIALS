@@ -69,49 +69,54 @@
       "涂料和装饰材料",
       "配件",
       "运输服务"
-    ]
+    ],
+    "total": "总计",
+    "productCategory": "商品类别：",
+    "all": "全部",
+    "addProductCart": "加入购物车",
+    "clearCart": "清空全部"
   },
   "productList": [
     {
       "categories": "重型建筑材料",
-      "name": "1",
+      "name": "预拌混凝土",
       "image": "",
-      "description": "基础建筑材料，如高质量的混凝土、水泥和砖块",
+      "description": "基础建筑材料，如混凝土、水泥和优质砖块。",
       "price": 150
     },
     {
-      "categories": "钢筋和水泥",
-      "name": "2",
+      "categories": "钢筋与水泥",
+      "name": "标准钢筋",
       "image": "",
-      "description": "符合工业标准的钢筋和水泥",
+      "description": "符合行业标准的钢筋与水泥，强度高、耐用性强。",
       "price": 320
     },
     {
       "categories": "工具",
-      "name": "3",
+      "name": "电钻",
       "image": "",
-      "description": "工具，如钻机、锯子、锤子和配件",
+      "description": "基本工具，如电钻、锯子、锤子和各种配件。",
       "price": 90
     },
     {
-      "categories": "涂料和装饰材料",
-      "name": "4",
+      "categories": "涂料与装饰材料",
+      "name": "外墙涂料",
       "image": "",
-      "description": "建筑涂料、瓷砖、卫生洁具和家居装饰材料",
+      "description": "高质量的涂料、瓷砖、卫浴及家居装饰材料。",
       "price": 260
     },
     {
       "categories": "配件",
-      "name": "5",
+      "name": "三孔插座",
       "image": "",
-      "description": "电气配件，如电线、开关和插座",
+      "description": "电线、电源开关、插座等电器配件。",
       "price": 120
     },
     {
       "categories": "配件",
-      "name": "6",
+      "name": "铜电线",
       "image": "",
-      "description": "用于电气工程的材料和设备，如电线、开关和插座",
+      "description": "高品质铜电线、开关及必要的电气安装材料。",
       "price": 200
     }
   ],
