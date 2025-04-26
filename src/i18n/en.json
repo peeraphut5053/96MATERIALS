@@ -1,58 +1,68 @@
 {
     "meta": {
-      "title": "Astrobrew | Micro SaaS landing page"
+        "title": "96 MATERIALS | Materials that Build Trust"
     },
     "nav": {
-      "features": "Features",
-      "customers": "Customers",
-      "premium": "Premium",
-      "new": "New",
-      "login": "Login",
-      "join": "Join us"
+        "home": "Home",
+        "about": "About Us",
+        "products": "Products / Services",
+        "contact": "Contact Us",
+        "projects": "Projects / Reviews"
     },
-    "hero": {
-      "title": "Learn faster with your best language tutor",
-      "description": "Astrobrew is a free and open-source elegant landing page for Micro SaaS products built with Astro and Skeleton CSS",
-      "cta": "Get started for free"
+    "home": {
+        "slogan": "Materials that Build Trust",
+        "intro": "96 MATERIALS CO., LTD. is committed to providing high-quality construction materials sourced from trusted manufacturers, ensuring strength and sustainability for every project.",
+        "cta": "Get Started"
     },
-    "features": {
-      "title": "Features you'll love",
-      "items": [
-        "Easy to use",
-        "Clean design",
-        "Built with Astro",
-        "Super fast performance",
-        "Responsive on all devices"
-      ]
+    "about": {
+        "title": "About Us",
+        "content": [
+            "The core of 96 MATERIALS CO., LTD. is an unwavering commitment to quality...",
+            "One of the company’s key strengths is its diverse and comprehensive product range...",
+            "96 MATERIALS emphasizes customer-centric service through a knowledgeable and responsive support team...",
+            "Sustainability is a priority, offering eco-friendly materials and embracing innovation in construction..."
+        ]
     },
-    "howToUse": {
-      "title": "How to get started?",
-      "steps": [
-        {
-          "title": "Download from GitHub",
-          "description": "Click 'Get started for free' to clone the project"
-        },
-        {
-          "title": "Edit your content",
-          "description": "Update text, images, and links to match your brand"
-        },
-        {
-          "title": "Publish your site",
-          "description": "Deploy on GitHub Pages, Vercel, or your favorite platform"
-        }
-      ]
+    "products": {
+        "title": "Products & Services",
+        "categories": [
+            "Heavy Construction Materials",
+            "Steel & Cement",
+            "Tools & Equipment",
+            "Paints & Decorative Materials"
+        ]
     },
-    "finalCta": {
-      "title": "Ready to start?",
-      "description": "Astrobrew helps you build a professional landing page in minutes",
-      "cta": "Start now"
+    "contact": {
+        "title": "Contact Us",
+        "phone": "Phone",
+        "line": "LINE",
+        "facebook": "Facebook",
+        "map": "Store Location"
     },
-    "footer": {
-      "text": "Made with ❤️ by the Astro community",
-      "links": {
-        "github": "GitHub",
-        "privacy": "Privacy Policy",
-        "terms": "Terms of Use"
-      }
+    "reviews": {
+        "title": "Projects / Reviews",
+        "description": "Explore our projects and customer reviews to see the quality and reliability of our materials in action.",
+        "projects": [
+            {
+                "name": "Project A",
+                "description": "A large-scale residential project using our heavy construction materials."
+            },
+            {
+                "name": "Project B",
+                "description": "A commercial building project utilizing our steel and cement products."
+            },
+            {
+                "name": "Project C",
+                "description": "A renovation project featuring our paints and decorative materials."
+            }
+        ]
+    },
+    "productGrid": {
+        "title": "ตะกร้าสินค้า",
+        "empty": "ตะกร้าของคุณว่างเปล่า",
+        "checkout": "ชำระเงิน",
+        "continueShopping": "เลือกซื้อสินค้าเพิ่มเติม",
+        "addProduct": "เพิ่มสินค้า"
     }
-  }
+    
+}

@@ -1,0 +1,354 @@
+---
+import hero from '../../assets/hero.png';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'th' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+import Layout from '../../layouts/Layout.astro';
+import { getTranslation } from '../../i18n';
+
+const lang = Astro.params.lang ?? 'th';
+const t = getTranslation(lang);
+
+const products = [
+  {
+    name: t.products.categories[0],
+    image: '',
+    description: 'วัสดุก่อสร้างพื้นฐาน เช่น คอนกรีต ปูน และอิฐคุณภาพสูง',
+    price: 150,
+  },
+  {
+    name: t.products.categories[1],
+    image: '',
+    description: 'เหล็กเส้น มอก. และปูนซีเมนต์มาตรฐานอุตสาหกรรม',
+    price: 320,
+  },
+  {
+    name: t.products.categories[2],
+    image: '',
+    description: 'เครื่องมือช่าง เช่น สว่าน เลื่อย ค้อน และอุปกรณ์เสริม',
+    price: 90,
+  },
+  {
+    name: t.products.categories[3],
+    image: '',
+    description: 'สีทาอาคาร กระเบื้อง สุขภัณฑ์ และวัสดุตกแต่งบ้าน',
+    price: 260,
+  }, 
+  {
+    name: t.products.categories[4],
+    image: '',
+    description: 'อุปกรณ์ไฟฟ้า เช่น สายไฟ สวิตช์ และปลั๊กไฟ',
+    price: 120,
+  },
+  {
+    name: t.products.categories[5],
+    image: '',
+    description: 'วัสดุอุปกรณ์สำหรับงานไฟฟ้า เช่น สายไฟ สวิตช์ และปลั๊กไฟ',
+    price: 200,
+  }
+  
+];
+---
+
+<Layout title={t.products.title} lang={lang}>
+  <section class="product-layout container">
+    <aside class="cart-section sticky">
+      <h2>🛒 ตะกร้าของคุณ</h2>
+      <ul id="cart-list"></ul>
+      <div id="cart-summary"></div>
+      
+      <button onclick="clearCart()" class="clear-cart">🗑 ล้างตะกร้า</button>
+    </aside>
+
+    <main class="product-section">
+      <h1 class="h1-title center">{t.products.title}</h1>
+      <div class="product-grid">
+        {products.map((item) => (
+          <div class="product-card">
+            <img src={item.image || hero.src} alt={item.name} />
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+            <p><strong>฿{item.price}</strong></p>
+            <button class="add-to-cart" onclick={`addToCart('${item.name}', ${item.price})`}>
+              🛒 เพิ่มลงตะกร้า
+            </button>
+          </div>
+        ))}
+      </div>
+    </main>
+  </section>
+</Layout>
+
+<script is:inline>
+  function addToCart(productName, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const index = cart.findIndex(item => item.name === productName);
+    if (index !== -1) {
+      cart[index].quantity++;
+    } else {
+      cart.push({ name: productName, price: price, quantity: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  }
+
+  function removeFromCart(index) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  }
+
+  function clearCart() {
+    localStorage.removeItem('cart');
+    renderCart();
+  }
+
+  function updateQuantity(index, amount) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart[index]) {
+      cart[index].quantity += amount;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  }
+
+  function renderCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const list = document.getElementById('cart-list');
+    const summary = document.getElementById('cart-summary');
+    list.innerHTML = '';
+    summary.innerHTML = '';
+
+    if (cart.length === 0) {
+      list.innerHTML = '<li>ไม่มีสินค้าในตะกร้า</li>';
+      return;
+    }
+
+    let total = 0;
+    cart.forEach((item, index) => {
+      const li = document.createElement('li');
+      const itemTotal = item.quantity * item.price;
+      total += itemTotal;
+      li.innerHTML = `
+        <div class="cart-item">
+          <div>
+            <strong>${item.name}</strong><br/>
+            ฿${item.price} x ${item.quantity} = ฿${itemTotal}
+<div class="cart-controls">
+  <button 
+    onclick="updateQuantity(${index}, -1)" 
+    style="width:4rem;height:4rem;font-size:16px;padding:2px 5px;border-radius:4px;border:1px solid #ccc;background:#f3f4f6;cursor:pointer;">
+    ➖
+  </button>
+
+  <button 
+    onclick="updateQuantity(${index}, 1)" 
+    style="width:4rem;height:4rem;font-size:16px;padding:2px 5px;border-radius:4px;border:1px solid #ccc;background:#f3f4f6;cursor:pointer;">
+    ➕
+  </button>
+
+  <button 
+    onclick="removeFromCart(${index})" 
+    style="width:4rem;height:4rem;font-size:16px;padding:2px 5px;border-radius:4px;border:1px solid #ccc;background:#f3f4f6;color:#fff;cursor:pointer;">
+    🗑
+  </button>
+</div>
+      `;
+      list.appendChild(li);
+    });
+
+    summary.innerHTML = `<p><strong>รวมทั้งหมด: ฿${total}</strong></p>`;
+  }
+
+  window.addEventListener('DOMContentLoaded', renderCart);
+</script>
+
+<style>
+.product-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 1rem;
+}
+
+.cart-section {
+  width: 25%;
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 12px;
+  height: fit-content;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.cart-section.sticky {
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start;
+}
+
+.cart-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.cart-section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.cart-section li {
+  margin-bottom: 1rem;
+  color: #374151;
+  background: #fff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.cart-controls {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.cart-controls button.small-button {
+  all: unset; /* ✅ ล้างค่าจาก global */
+  background: #e5e7eb;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.25rem 0.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+}
+.cart-controls button.small-button:hover {
+  background: #d1d5db;
+}
+
+.cart-controls button.small-button.danger {
+  background: #ef4444;
+  color: white;
+  border: none;
+}
+
+.cart-controls button.small-button.danger:hover {
+  background: #b91c1c;
+}
+
+.cart-controls button:hover {
+  background: #d1d5db;
+}
+
+.cart-controls button:last-child {
+  background: #ef4444;
+  color: white;
+  border: none;
+}
+
+.cart-controls button:last-child:hover {
+  background: #b91c1c;
+}
+
+
+.clear-cart {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.1rem 1rem;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clear-cart:hover {
+  background: #b91c1c;
+}
+
+.product-section {
+  flex: 1;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  min-height: 60px;
+}
+
+.add-to-cart {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-to-cart:hover {
+  background: #1e40af;
+}
+
+@media (max-width: 768px) {
+  .product-layout {
+    flex-direction: column;
+  }
+
+  .cart-section {
+    width: 100%;
+    order: 2;
+  }
+}
+</style>

@@ -2,6 +2,9 @@
 import FeatureOne from '../assets/object-one.svg'
 import FeatureTwo from '../assets/object-two.svg'
 import FeatureThree from '../assets/object-three.svg'
+
+const { t } = Astro.props;
+
 ---
 
 
@@ -14,22 +17,22 @@ import FeatureThree from '../assets/object-three.svg'
                 <div class="sol-media m-margin">
                     <img src={FeatureOne.src} alt="Prospect">
                 </div>
-                <h3 class="h3-title">Learning</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere velit ullam maxime veritatis,  possimus.</p>
+                <h3 class="h3-title">{t.features.quality.title }</h3>
+                <p>{t.features.quality.description }</p>
             </div>
             <div class="sol-wrap one-third column">
                 <div class="sol-media m-margin">
-                    <img src={FeatureTwo.src} alt="Marketing">
+                    <img src={FeatureTwo.src} alt="Prospect">
                 </div>
-                <h3 class="h3-title">Support</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere velit ullam maxime veritatis,  possimus.</p>
+                <h3 class="h3-title">{t.features.service.title }</h3>
+                <p>{t.features.service.description }</p>
             </div>
             <div class="sol-wrap one-third column">
-                <div class="sol-media  m-margin">
-                    <img src={FeatureThree.src} alt="Automation">
+                <div class="sol-media m-margin">
+                    <img src={FeatureThree.src} alt="Prospect">
                 </div>
-                <h3 class="h3-title">Insights</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere velit ullam maxime veritatis,  possimus.</p>
+                <h3 class="h3-title">{t.features.reliability.title }</h3>
+                <p>{t.features.reliability.description }</p>
             </div>
         </div>
     </div>

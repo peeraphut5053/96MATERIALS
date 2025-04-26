@@ -1,58 +1,67 @@
 {
-    "meta": {
-      "title": "Astrobrew | 微型 SaaS 登陆页面"
-    },
-    "nav": {
-      "features": "功能特色",
-      "customers": "客户",
-      "premium": "高级版",
-      "new": "最新",
-      "login": "登录",
-      "join": "加入我们"
-    },
-    "hero": {
-      "title": "用最佳语言导师更快学习",
-      "description": "Astrobrew 是一个免费且开源的优雅登陆页面，专为微型 SaaS 产品打造，基于 Astro 和 Skeleton CSS",
-      "cta": "立即免费开始"
-    },
-    "features": {
-      "title": "你会喜欢的功能",
-      "items": [
-        "易于使用",
-        "简洁设计",
-        "基于 Astro 构建",
-        "超快性能",
-        "适配所有设备"
-      ]
-    },
-    "howToUse": {
-      "title": "如何开始使用？",
-      "steps": [
-        {
-          "title": "从 GitHub 下载",
-          "description": "点击“立即免费开始”按钮克隆项目"
-        },
-        {
-          "title": "编辑你的内容",
-          "description": "更新文本、图像和链接以匹配你的品牌"
-        },
-        {
-          "title": "发布你的网站",
-          "description": "通过 GitHub Pages、Vercel 或你喜欢的平台部署"
-        }
-      ]
-    },
-    "finalCta": {
-      "title": "准备好开始了吗？",
-      "description": "Astrobrew 帮助你在几分钟内构建专业的登陆页面",
-      "cta": "立即开始"
-    },
-    "footer": {
-      "text": "由 Astro 社区 ❤️ 倾心打造",
-      "links": {
-        "github": "GitHub",
-        "privacy": "隐私政策",
-        "terms": "使用条款"
-      }
+  "meta": {
+    "title": "96 材料 | 值得信赖的建筑材料"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品 / 服务",
+    "contact": "联系我们",
+    "projects": "项目 / 客户评价"
+  },
+  "home": {
+    "slogan": "打造信任的材料",
+    "intro": "96材料有限公司 致力于从可信赖的制造商中精挑细选高品质建筑材料，确保您的每一个项目都稳固可靠并可持续发展",
+    "cta": "立即开始使用"
+  },
+  "about": {
+    "title": "关于我们",
+    "content": [
+      "96材料有限公司的核心是对质量始终如一的承诺……",
+      "公司的一个显著特点是产品种类丰富……",
+      "公司注重以客户为中心的服务，拥有一支专业的服务团队……",
+      "公司致力于推动可持续建筑，提供环保材料……"
+    ]
+  },
+  "products": {
+    "title": "产品与服务",
+    "categories": [
+      "重型建筑材料",
+      "钢筋与水泥",
+      "工具与设备",
+      "涂料与装饰材料"
+    ]
+  },
+  "contact": {
+    "title": "联系我们",
+    "phone": "电话",
+    "line": "LINE",
+    "facebook": "脸书",
+    "map": "商店位置"
+  },
+      "reviews": {
+        "title": "项目 / 客户评价",
+        "description": "浏览我们的项目和客户评价，了解我们材料的质量和可靠性。",
+        "projects": [
+          {
+            "name": "项目 A",
+            "description": "使用我们重型建筑材料的大型住宅项目。"
+          },
+          {
+            "name": "项目 B",
+            "description": "利用我们的钢筋和水泥产品的商业建筑项目。"
+          },
+          {
+            "name": "项目 C",
+            "description": "使用我们的涂料和装饰材料的翻新项目。"
+          }
+        ]
+      },
+      "productGrid": {
+        "title": "ตะกร้าสินค้า",
+        "empty": "ตะกร้าของคุณว่างเปล่า",
+        "checkout": "ชำระเงิน",
+        "continueShopping": "เลือกซื้อสินค้าเพิ่มเติม",
+        "addProduct": "เพิ่มสินค้า"
     }
-  }
+}

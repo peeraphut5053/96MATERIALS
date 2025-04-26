@@ -1,6 +1,10 @@
 
+---
+const { t } = Astro.props;
+---
 
-<section class="fine-section padded" id="customers">
+
+<section class="fine-section padded" id="about">
     <div class="container">
         <div class="testimony">
             <div class="flex">
@@ -10,7 +14,7 @@
                     </div>
                 </div>
                 <div class="customer-testimony">
-                    <h4 class="h3-title">"I’ve been a happy Astrobrew customer since 2018. Then and now, Plutio has helped me keep my projects organized and effortless. My clients love it too - they feel more important and involved than ever before."</h4>
+                    <h4 class="h3-title">"{t.about.content}"</h4>
                     <p>Claire Rick, Lead Developer @Slack</p>
                 </div>
             </div>

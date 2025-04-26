@@ -1,0 +1,148 @@
+---
+import IconLine from '../assets/IconLine.svg';
+
+const { t } = Astro.props;
+---
+
+<section class="contact-wrapper padded" id="contact">
+  <div class="container">
+    <h2 class="section-title">{t.contact.title}</h2>
+
+    <div class="contact-card">
+      <div class="contact-info">
+        <h3 class="info-heading">{t.contact.companyName}</h3>
+        <p>{t.contact.address}</p>
+        <p>{t.contact.hours}</p>
+      </div>
+
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.820503703369!2d100.5018282!3d13.7367172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2993a9f7b379d%3A0xd70dc9e017117457!2sBangkok!5e0!3m2!1sen!2sth!4v1683023652271!5m2!1sen!2sth"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <a class="btn-primary" href="tel:021234567">
+        📞 {t.contact.callNow}
+      </a>
+      <a class="btn-line" href="https://line.me/R/ti/p/@96materials" target="_blank">
+        <img src={IconLine.src} alt="Line" width="20" height="20" /> {t.contact.chatLine}
+      </a>
+      <a class="btn-facebook" href="https://facebook.com/96materials" target="_blank">
+        👍 {t.contact.visitFacebook}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+.contact-wrapper {
+  background: #f9fafb;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #1f2937;
+  }
+
+  .contact-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    gap: 2rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: #374151;
+
+    .info-heading {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #111827;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .contact-map {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .contact-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #fff;
+
+      &:hover {
+        background: #1e40af;
+      }
+    }
+
+    .btn-line {
+      background: #06c755;
+      color: #fff;
+
+      img {
+        display: inline-block;
+      }
+
+      &:hover {
+        background: #059845;
+      }
+    }
+
+    .btn-facebook {
+      background: #1877f2;
+      color: #fff;
+
+      &:hover {
+        background: #145dbf;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-card {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+</style>

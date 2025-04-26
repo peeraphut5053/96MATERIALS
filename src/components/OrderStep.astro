@@ -1,30 +1,47 @@
 ---
-import Showcase from '../assets/hiw.svg'
+import OrderStepImg from '../assets/OrderStepImg.png'
+ 
 const features = ['Find your tutor', 'Choose your subject', 'Start learning']
+const { t, lang } = Astro.props;
+const steps = [
+  t.OrderStep.step1,
+  t.OrderStep.step2,
+  t.OrderStep.step3,
+  t.OrderStep.step4
+];
+
+
 ---
 
 
-<section class="product-defined">
+<section class="product-defined" id="order">
     <div class="container">
-         <div class="row product-brief-items">
-            <div class="brief-media center one-half column">
-                <img src={Showcase.src} alt="Showcase mockup">
-            </div>
-            <div class="brief-tab one-half column">
-                <h3 class="h1-title">Spark growth and engagement</h3>
-                <p class="m-paragraph m-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                <ol class="ro">
-                    {features.map((el, index) => (
-                        <li><span>{index + 1}</span> <span>{el}</span></li>
-                    ))}
-                </ol>
-                <br>
-                <a href="https://github.com/LaB-CH3/astrobrew" class="button button-primary lg">Register for free</a>
-            </div>
-           
+      <div class="row product-brief-items">
+        <div class="brief-media center one-half column">
+          <img src={OrderStepImg.src} alt="ขั้นตอนการสั่งซื้อ" />
         </div>
+        <div class="brief-tab one-half column">
+          <h3 class="h1-title">{t.OrderStep.title}</h3>
+          <p class="m-paragraph m-margin">{t.OrderStep.description}</p>
+          <ol class="ro">
+            {steps.map((step, index) => (
+              <li>
+                <span>{index + 1}</span>
+                <span>
+                  <strong>{step.title}</strong><br />
+                  {step.description}
+                </span>
+              </li>
+            ))}
+          </ol>
+          <br />
+          <a href={`/${lang}/products`} class="button button-primary lg">
+            {t.OrderStep.btn.title}
+          </a>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
 
 <style lang="scss">

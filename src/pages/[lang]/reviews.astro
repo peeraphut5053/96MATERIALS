@@ -1,0 +1,63 @@
+---
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'th' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } }
+  ];
+}
+
+import Layout from '../../layouts/Layout.astro';
+import { getTranslation } from '../../i18n';
+
+const lang = Astro.params.lang ?? 'th';
+const t = getTranslation(lang);
+---
+
+<Layout title={t.reviews.title} lang={lang}>
+  <section class="container padded review-section">
+    <h1 class="h1-title center">{t.reviews.title}</h1>
+
+    <div class="review-grid">
+      {t.reviews.projects.map((item) => (
+        <div class="review-card">
+          <p class="quote">“{item.name}”</p>
+          <p class="author">— {item.name}, {item.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+.review-section {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.review-card {
+  background-color: #f9fafb;
+  border-left: 5px solid var(--accent, #2563eb);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.review-card .quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.review-card .author {
+  color: #555;
+  font-weight: bold;
+}
+</style>

@@ -5,37 +5,61 @@ const { lang, t } = Astro.props;
 ---
 <header>
   <nav class="container nav-grid">
-    <div class="nav-logo">
+    <div class="logo">
+      <span class="logo-96">96</span>
+      <span class="logo-text">MATERIALS</span>
+    </div>
+    <!-- <div class="nav-logo">
       <a href="https://anthonycharles.work">
         <img src={Logo.src} alt="brand logo" />
       </a>
-    </div>
+    </div> -->
 
     <div class="nav-links">
-      <a href="#features">{t?.nav?.features || "Features"}</a>
-      <a href="#customers">{t?.nav?.customers || "Customers"}</a>
-      <a href="https://astrobrewpro.netlify.app/" target="_blank">
-        <span>{t?.nav?.premium || "Premium"}</span>
-        <span class="pulse tag">{t?.nav?.new || "New"}</span>
-      </a>
+      <a href={`/${lang}/#product-hero`}>{t?.nav?.home || "Home"}</a>
+      <a href={`/${lang}/#about`}>{t?.nav?.about || "About Us"}</a>
+      <a href={`/${lang}/products`}>{t?.nav?.products || "Products"}</a>
+      <a href={`/${lang}/#contact`}>{t?.nav?.contact || "Contact"}</a>
+      <a href={`/${lang}/reviews`}>{t?.nav?.reviews || "Review"}</a>
+      
     </div>
 
-    <div class="nav-cta">
+    <!-- <div class="nav-cta">
       <a href="#">{t?.nav?.login || "Login"}</a>
       <a href="https://github.com/LaB-CH3/astrobrew" class="button button-primary">
         {t?.nav?.join || "Join us"}
       </a>
-    </div>
+    </div> -->
   </nav>
 </header>
 
 <style lang="scss">
 .nav-grid {
   display: grid;
-  grid-template-columns: 12% 55% 30%;
+  grid-template-columns: 1fr 3fr 1fr; // ✅ ปรับจาก 12/55/30 เป็นสัดส่วนคงที่
   align-items: center;
   padding-top: 20px;
   padding-block: 1.5rem 1rem; // ✅ เผื่อพื้นที่ด้านบน
+}
+
+.logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.logo-96 {
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+.logo-text {
+  color: #333;
 }
 
 .nav-logo img {

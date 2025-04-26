@@ -1,47 +1,95 @@
 ---
-import Start from '../assets/start.svg'
-const creator = `https://instagram.com/codetonero/`
+const { t, lang = 'th' } = Astro.props;
 const links = [
-  { title: 'Help',  link: creator },
-  { title: 'FAQ', link: creator },
-  { title: 'Privacy', link: creator },
-  { title: 'Discord', link: creator },
-  ]
+  { title: t.nav.home, link: `/${lang}` },
+  { title: t.nav.about, link: `/${lang}#about` },
+  { title: t.nav.products, link: `/${lang}/products` },
+  { title: t.nav.contact, link: `/${lang}/contact` },
+];
 ---
 
-<footer>
-    <div class="container">
-      <div class="flex">
-        {links.map((item) => (
-            <a href={item.link} target="_blank">{item.title}</a>
-        ))}      
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <p class="company">📍 {t.contact.companyName}</p>
+        <p>{t.contact.address}</p>
+        <p>📞 02-123-4567</p>
+        <p>💬 LINE: @96materials</p>
+        <p>🌐 facebook.com/96materials</p>
       </div>
-      <div class="center">
-        <a href="https://github.com/LaB-CH3/astrobrew">
-          <img src={Start.src} alt="">
-        </a>
+
+      <div class="footer-links">
+        {links.map((item) => (
+          <a href={item.link}>{item.title}</a>
+        ))}
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2025 96 MATERIALS CO., LTD. {t.footer.rights}</p>
+    </div>
+  </div>
 </footer>
 
 <style lang="scss">
+.footer {
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 3rem 1rem;
+  font-size: 0.95rem;
 
-footer{
-  padding: 50px;
-}
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
 
-.flex{
-  justify-content: center;
-  padding: 50px 10px;
-  a{
-    padding: 20px;
-    color: #111;
-    text-decoration: none;
-    font-size: 2rem;
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-info p,
+  .footer-links a {
+    margin-bottom: 0.5rem;
+    color: #d1d5db;
+  }
+
+  .footer-info .company {
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    a {
+      text-decoration: none;
+      color: #9ca3af;
+
+      &:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #374151;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 }
-
-img{
-    width: 200px;
-  }
 </style>

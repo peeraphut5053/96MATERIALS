@@ -1,64 +1,111 @@
 ---
-import Showcase from '../assets/hero.svg'
+import hero from '../assets/hero.png';
 
-const { t } = Astro.props;
+const { t, lang } = Astro.props;
 ---
-<section class="product-hero">
+
+<section class="product-hero" id="product-hero">
   <div class="container">
     <div class="row">
-      <div class="one-half column">
-        <div class="d-cell">
-          <h1 class="h1-title">{t.hero.title}</h1>
-          <div class="content">
-            <p>{t.hero.description}</p>
-            <a href="https://github.com/LaB-CH3/astrobrew" class="button button-primary lg">
-              {t.hero.cta}
+      <div class="column-left">
+        <div class="hero-content">
+          <h1 class="hero-title">{t.home.slogan}</h1>
+          <p class="hero-description">{t.home.intro}</p>
+          <div class="hero-buttons">
+            <a href={`/${lang}/products`} class="button button-primary lg">
+              {t.home.cta || "Explore Products"}
+            </a>
+            <a href={`/${lang}/products`} class="button button-outline lg">
+              {t.OrderStep.btn.title}
             </a>
           </div>
         </div>
       </div>
-      <div class="one-half column hero-media">
-        <img src={Showcase.src} class="u-full-width" alt="Hero illustrator" />
+      <div class="column-right">
+        <img src={hero.src} alt="Construction materials illustration" class="hero-image" />
       </div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
-  .product-hero {
-    padding: 70px 0;
+.product-hero {
+  padding: 4rem 0;
+  background: #f9fafb;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .column-left,
+  .column-right {
+    flex: 1 1 45%;
+    padding: 1rem;
+  }
+
+  .hero-content {
+    max-width: 500px;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+
+  .hero-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 2rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
     .row {
-      display: flex;
-      align-items: center;
+      flex-direction: column-reverse;
+      text-align: center;
     }
-    .one-half {
-      display: table;
-      height: 400px;
-      margin-bottom: 40px;
-      .d-cell {
-        display: table-cell;
-        vertical-align: middle;
-      }
+
+    .hero-title {
+      font-size: 2.5rem;
     }
-    .hero-media {
-      position: relative;
-      img:not(.u-full-width) {
-        width: 80px;
-        position: absolute;
-        left: 20px;
-        bottom: 0;
-      }
+
+    .hero-description {
+      font-size: 1.1rem;
     }
   }
 
-  @media (max-width: 700px) {
-    .product-hero {
-      .row {
-        flex-direction: column;
-        .hero-media {
-          display: none;
-        }
-      }
+  .hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
+  a {
+    white-space: nowrap;
+  }
+
+  .button-outline {
+    background: transparent;
+    border: 2px solid var(--accent, #2563eb);
+    color: #2563eb;
+
+    &:hover {
+      background-color: #2563eb;
+      color: white;
     }
   }
+}
+}
 </style>

@@ -5,8 +5,11 @@ export interface Props {
 }
 
 import TopHeader from "../components/TopHeader.astro";
+import Header from "../components/Header.astro";
+import { getTranslation } from '../i18n';
 
 const { title, lang = 'en' } = Astro.props;
+const t = getTranslation(lang);
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -20,7 +23,10 @@ const { title, lang = 'en' } = Astro.props;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
   </head>
   <body>
-    <TopHeader lang={lang} /> <!-- ✅ อยู่แยกชัดเจนจาก Header -->
+    <div class="sticky-header">
+      <TopHeader lang={lang} />
+      <Header t={t} lang={lang} />
+    </div>
     <slot />
   </body>
 </html>
@@ -29,11 +35,17 @@ const { title, lang = 'en' } = Astro.props;
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root {
-  --accent: #CA555D;
-  --tenary: #8574EB;
+  --accent: #6882e0;
+  --tenary: #3512fb;
   --font-family: "Ubuntu", sans-serif;
 }
-
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 body, html {
   font-family: var(--font-family);
   scroll-behavior: smooth;
