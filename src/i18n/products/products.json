@@ -1,0 +1,112 @@
+[
+    {
+        "id": "st-001",
+        "categoryKey": "steel",
+        "name": {
+            "th": "เหล็กเส้นกลม 6 มม.",
+            "en": "Round Steel Bar 6 mm",
+            "zh": "圆钢筋 6 毫米"
+        },
+        "description": {
+            "th": "เหล็กเส้นกลม 6 มม. จากแบรนด์ TATA คุณภาพสูง เหมาะกับงานทั่วไป",
+            "en": "6 mm round steel bar from TATA, high quality and suitable for general use.",
+            "zh": "来自 TATA 的 6 毫米圆钢筋，质量上乘，适合一般用途。"
+        },
+        "image": "/images/products/st-001.png",
+        "price": 120,
+        "unitKey": "piece",
+        "stock": 100,
+        "isAvailable": true,
+        "brand": "TATA",
+        "highlight": true,
+        "createdAt": "2025-04-27"
+    },
+    {
+        "id": "st-002",
+        "categoryKey": "steel",
+        "name": {
+            "th": "เหล็กข้ออ้อย 12 มม.",
+            "en": "Deformed Steel Bar 12 mm",
+            "zh": "12 毫米螺纹钢筋"
+        },
+        "description": {
+            "th": "เหล็กข้ออ้อย 12 มม. จากแบรนด์ TATA เหมาะสำหรับงานโครงสร้าง",
+            "en": "12 mm deformed steel bar from TATA, ideal for structural use.",
+            "zh": "来自 TATA 的 12 毫米螺纹钢筋，适用于结构用途。"
+        },
+        "image": "/images/products/st-002.png",
+        "price": 290,
+        "unitKey": "piece",
+        "stock": 80,
+        "isAvailable": true,
+        "brand": "TATA",
+        "highlight": false,
+        "createdAt": "2025-04-27"
+    },
+    {
+        "id": "cm-001",
+        "categoryKey": "cement",
+        "name": {
+            "th": "ปูนซีเมนต์ปอร์ตแลนด์ประเภท 1",
+            "en": "Portland Cement Type 1",
+            "zh": "波特兰水泥类型 1"
+        },
+        "description": {
+            "th": "ปูนซีเมนต์คุณภาพสูงจาก SCG เหมาะกับงานก่อสร้างทั่วไป",
+            "en": "High-quality Portland cement from SCG, suitable for general construction.",
+            "zh": "来自 SCG 的高品质波特兰水泥，适用于一般施工。"
+        },
+        "image": "/images/products/cm-001.png",
+        "price": 135,
+        "unitKey": "bag",
+        "stock": 120,
+        "isAvailable": true,
+        "brand": "SCG",
+        "highlight": true,
+        "createdAt": "2025-04-27"
+    },
+    {
+        "id": "wd-001",
+        "categoryKey": "wood",
+        "name": {
+            "th": "ไม้แบบเบญจพรรณ 1\"x6\"",
+            "en": "Mixed Hardwood 1\"x6\"",
+            "zh": "混合木材 1\"x6\""
+        },
+        "description": {
+            "th": "ไม้เบญจพรรณคุณภาพสูง สำหรับงานแบบทั่วไป",
+            "en": "High-quality mixed hardwood for general formwork use.",
+            "zh": "高质量的混合木材，适用于普通模板工作。"
+        },
+        "image": "/images/products/wd-001.png",
+        "price": 95,
+        "unitKey": "piece",
+        "stock": 70,
+        "isAvailable": true,
+        "brand": "No Brand",
+        "highlight": true,
+        "createdAt": "2025-04-27"
+    },
+    {
+        "id": "hw-001",
+        "categoryKey": "hardware",
+        "name": {
+            "th": "สว่านไฟฟ้า",
+            "en": "Electric Drill",
+            "zh": "电钻"
+        },
+        "description": {
+            "th": "สว่านไฟฟ้า Makita สำหรับงานเจาะทั่วไป",
+            "en": "Makita electric drill for general drilling use.",
+            "zh": "Makita 电钻，适用于一般钻孔工作。"
+        },
+        "image": "/images/products/hw-001.png",
+        "price": 900,
+        "unitKey": "unit",
+        "stock": 35,
+        "isAvailable": true,
+        "brand": "Makita",
+        "highlight": true,
+        "createdAt": "2025-04-27"
+    }
+]

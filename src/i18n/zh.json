@@ -76,50 +76,6 @@
     "addProductCart": "加入购物车",
     "clearCart": "清空全部"
   },
-  "productList": [
-    {
-      "categories": "重型建筑材料",
-      "name": "预拌混凝土",
-      "image": "",
-      "description": "基础建筑材料，如混凝土、水泥和优质砖块。",
-      "price": 150
-    },
-    {
-      "categories": "钢筋与水泥",
-      "name": "标准钢筋",
-      "image": "",
-      "description": "符合行业标准的钢筋与水泥，强度高、耐用性强。",
-      "price": 320
-    },
-    {
-      "categories": "工具",
-      "name": "电钻",
-      "image": "",
-      "description": "基本工具，如电钻、锯子、锤子和各种配件。",
-      "price": 90
-    },
-    {
-      "categories": "涂料与装饰材料",
-      "name": "外墙涂料",
-      "image": "",
-      "description": "高质量的涂料、瓷砖、卫浴及家居装饰材料。",
-      "price": 260
-    },
-    {
-      "categories": "配件",
-      "name": "三孔插座",
-      "image": "",
-      "description": "电线、电源开关、插座等电器配件。",
-      "price": 120
-    },
-    {
-      "categories": "配件",
-      "name": "铜电线",
-      "image": "",
-      "description": "高品质铜电线、开关及必要的电气安装材料。",
-      "price": 200
-    }
-  ],
   "contact": {
     "title": "联系我们",
     "companyName": "96 材料有限公司",

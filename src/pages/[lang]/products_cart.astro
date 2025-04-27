@@ -43,12 +43,29 @@ try {
 
 const uniqueCategories = Array.from(new Set(productList.map(p => p.categoryKey)));
 
+function loadImageFromAssets(fileName: string): string {
+  try {
+    const fullPath = new URL(`../../assets/${fileName}`, import.meta.url).href;
+    console.log('✅ Resolved image path:', fullPath);
+    return fullPath;
+  } catch (error) {
+    console.warn('⚠️ Failed to resolve image for file:', fileName, error);
+    return hero.src;
+  }
+}
 ---
 
 <Layout title={t.products.title} lang={lang}>
   <section class="product-layout container">
+    <aside class="cart-section sticky">
+      <ul id="cart-list"></ul>
+      <div id="cart-summary"></div>
+      <button onclick="clearCart()" class="clear-cart">🗑 {t.products.clearCart}</button>
+    </aside>
+
     <main class="product-section">
       <h1 class="h1-title center">{t.products.title}</h1>
+
       <div class="filter-bar">
         <label>{t.products.productCategory}</label>
         <select id="category-filter" onchange="filterProducts()">
@@ -73,17 +90,17 @@ const uniqueCategories = Array.from(new Set(productList.map(p => p.categoryKey))
             <h5>{item.name[lang]}</h5>
             <h6>{item.description[lang]}</h6>
             {/* <h5><strong>฿{item.price} / {unitsMap[item.unitKey][lang]}</strong></h5> */}
-            {/* <button class="add-to-cart" onclick={`addToCart('${item.name[lang]}', ${item.price})`}>
+            <button class="add-to-cart" onclick={`addToCart('${item.name[lang]}', ${item.price})`}>
               🛒 {t.products.addProductCart}
-            </button> */}
+            </button>
           </div>
         ))}
       </div>
     </main>
   </section>
-  <!-- <button id="floating-cart-btn" class="floating-cart" onclick="scrollToCart()">
+  <button id="floating-cart-btn" class="floating-cart" onclick="scrollToCart()">
     <span class="cart-icon">🛒</span>
-  </button> -->
+  </button>
 </Layout>
 
 <script is:inline>

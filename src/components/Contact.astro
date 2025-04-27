@@ -1,5 +1,6 @@
 ---
 import IconLine from '../assets/IconLine.svg';
+import IconFacebook from '../assets/IconFacebook.png';
 
 const { t } = Astro.props;
 ---
@@ -32,8 +33,8 @@ const { t } = Astro.props;
       <a class="btn-line" href="https://line.me/R/ti/p/@96materials" target="_blank">
         <img src={IconLine.src} alt="Line" width="20" height="20" /> {t.contact.chatLine}
       </a>
-      <a class="btn-facebook" href="https://facebook.com/96materials" target="_blank">
-        👍 {t.contact.visitFacebook}
+      <a class="btn-facebook" href="https://facebook.com/96materialz" target="_blank">
+        <img src={IconFacebook.src} alt="Line" width="20" height="20" /> {t.contact.visitFacebook}
       </a>
     </div>
   </div>

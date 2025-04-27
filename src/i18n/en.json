@@ -76,50 +76,6 @@
     "addProductCart": "Add to Cart",
     "clearCart": "Clear All"
   },
-  "productList": [
-    {
-      "categories": "Heavy Construction Materials",
-      "name": "Ready-Mixed Concrete",
-      "image": "",
-      "description": "Essential construction materials such as concrete, mortar, and high-quality bricks.",
-      "price": 150
-    },
-    {
-      "categories": "Rebar & Cement",
-      "name": "Standard Rebar",
-      "image": "",
-      "description": "Industry-standard rebar and cement certified for strength and durability.",
-      "price": 320
-    },
-    {
-      "categories": "Tools",
-      "name": "Electric Drill",
-      "image": "",
-      "description": "Essential tools such as drills, saws, hammers, and accessories for various tasks.",
-      "price": 90
-    },
-    {
-      "categories": "Paint & Decoration",
-      "name": "Exterior Wall Paint",
-      "image": "",
-      "description": "High-quality paints, tiles, sanitary ware, and home decorative materials.",
-      "price": 260
-    },
-    {
-      "categories": "Accessories",
-      "name": "Triple Socket Plug",
-      "image": "",
-      "description": "Electrical accessories including cables, switches, and socket outlets.",
-      "price": 120
-    },
-    {
-      "categories": "Accessories",
-      "name": "Copper Wire",
-      "image": "",
-      "description": "High-grade copper wire, switches, and essential electrical installation supplies.",
-      "price": 200
-    }
-  ],
   "contact": {
     "title": "Contact Us",
     "companyName": "96 Materials Co., Ltd.",
