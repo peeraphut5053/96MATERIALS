@@ -3,7 +3,7 @@ export interface Props {
   title: string;
   lang?: string;
 }
-
+import SeoHead from '../components/SeoHead.astro';
 import TopHeader from "../components/TopHeader.astro";
 import Header from "../components/Header.astro";
 import { getTranslation } from '../i18n';
@@ -11,6 +11,8 @@ import { getTranslation } from '../i18n';
 const { title, lang = 'en' } = Astro.props;
 const t = getTranslation(lang);
 ---
+
+
 <!DOCTYPE html>
 <html lang={lang}>
   <head>
@@ -28,6 +30,11 @@ const t = getTranslation(lang);
 
     <!-- Skeleton CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <SeoHead 
+    title="96 MATERIALS - วัสดุก่อสร้างคุณภาพ"
+    description="เหล็ก ปูน ไม้ ฮาร์ดแวร์ ราคาดี มีคุณภาพ ส่งไวถึงที่"
+    lang="th"
+  />
   </head>
   <body>
     <div class="sticky-header">
@@ -115,7 +122,7 @@ body, html {
 }
 
 .flex { display: flex; }
-section.padded { padding: 70px 0; }
+section.padded { padding: 10px 0; }
 
 @media (max-width: 900px) {
   .h1-title {

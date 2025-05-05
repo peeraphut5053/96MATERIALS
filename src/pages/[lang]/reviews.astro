@@ -14,9 +14,29 @@ import { getTranslation } from '../../i18n';
 
 const lang = Astro.params.lang ?? 'th';
 const t = getTranslation(lang);
----
 
+
+---
+<script>
+  if (typeof window !== "undefined") {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".review-card").forEach((el) => {
+      observer.observe(el);
+    });
+  }
+</script>
 <Layout title={t.reviews.title} lang={lang}>
+  
   <section class="container padded review-section">
     <h1 class="h1-title center">{t.reviews.title}</h1>
     <p class="center text-subtitle">{t.reviews.description}</p>
@@ -90,5 +110,28 @@ const t = getTranslation(lang);
 .review-description {
   font-size: 1rem;
   color: #4b5563;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.review-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
 }
 </style>

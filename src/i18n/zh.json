@@ -91,12 +91,12 @@
     "projects": [
       {
         "name": "住宅开发项目",
-        "image": "",
+        "image": "../images/reviews/rv-001.jpg",
         "description": "该项目使用的建筑材料质量高，并获得了标准认证"
       },
       {
         "name": "商业建筑",
-        "image": "",
+        "image": "../images/reviews/rv-002.jpg",
         "description": "选择合适的材料使该项目既坚固又美观"
       },
       {

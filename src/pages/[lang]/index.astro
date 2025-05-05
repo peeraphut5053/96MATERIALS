@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import SeoHead from '../../components/SeoHead.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import Features from '../../components/Features.astro';
@@ -25,6 +26,10 @@ export const prerender = true;
 ---
 
 <Layout title={t.meta.title} lang={lang}>
+  <SeoHead 
+  title="96 MATERIALS - วัสดุก่อสร้างคุณภาพ"
+  description="เหล็ก ปูน ไม้ ฮาร์ดแวร์ ราคาดี มีคุณภาพ ส่งไวถึงที่"
+/>
   <Hero t={t} lang={lang} />
   <Features t={t}  lang={lang}  />
   <OrderStep t={t}  lang={lang} />
